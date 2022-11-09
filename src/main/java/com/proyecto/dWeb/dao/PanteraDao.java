@@ -10,7 +10,7 @@ public interface PanteraDao {
 
     void deletePantera(Long id);
 
-    void addPantera(Long id, String nombre);
+    void addPantera(Long id, String name, String email, String tribe);
 
-    void updatePantera(Long id, String nombre);
+    void updatePantera(Long id, String name, String email, String tribe);
 }

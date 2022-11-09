@@ -1,5 +1,6 @@
-package com.proyecto.dWeb.dao;
+package com.proyecto.dWeb.service;
 
+import com.proyecto.dWeb.dao.PanteraDao;
 import com.proyecto.dWeb.model.Pantera;
 import org.springframework.stereotype.Repository;
 
@@ -11,7 +12,7 @@ import java.util.UUID;
 
 @Repository
 @Transactional
-public class PanteraDaoImplementation implements PanteraDao{
+public class PanteraDaoImplementation implements PanteraDao {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -28,18 +29,22 @@ public class PanteraDaoImplementation implements PanteraDao{
         entityManager.remove(pantera);
     }
     @Override
-    public void addPantera(Long id, String nombre){
+    public void addPantera(Long id, String name, String email, String tribe){
         Pantera pantera = new Pantera();
-        pantera.setNombre(nombre);
+        pantera.setName(name);
         pantera.setId(id);
+        pantera.setEmail(email);
+        pantera.setTribe(tribe);
         entityManager.persist(pantera);
     }
 
     @Override
-    public void updatePantera(Long id, String nombre) {
+    public void updatePantera(Long id, String name, String email, String tribe) {
         Pantera pantera = entityManager.find(Pantera.class, id);
         entityManager.remove(pantera);
-        pantera.setNombre(nombre);
+        pantera.setName(name);
+        pantera.setEmail(email);
+        pantera.setTribe(tribe);
         entityManager.persist(pantera);
     }
 }

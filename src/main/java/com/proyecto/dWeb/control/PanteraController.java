@@ -24,12 +24,12 @@ public class PanteraController {
         panteraDao.deletePantera(id);
     }
 
-    @PutMapping(value = "add/{id}/{nombre}")
-    public void addPantera(@PathVariable("id") Long id, @PathVariable("nombre") String nombre){
-        panteraDao.addPantera(id, nombre);
+    @PutMapping(value = "add/{id}/{name}/{email}/{tribe}")
+    public void addPantera(@PathVariable("id") Long id, @PathVariable("name") String name, @PathVariable("email")String email, @PathVariable("tribe") String tribe){
+        panteraDao.addPantera(id, name, email, tribe);
     }
-    @PostMapping(value = "{id}/{nombre}")
-    public void updatePantera(@PathVariable("id") Long id, @PathVariable ("nombre") String nombre){
-        panteraDao.updatePantera(id, nombre);
+    @PostMapping(value = "{id}/{name}/{email}/{tribe}")
+    public void updatePantera(@PathVariable("id") Long id, @PathVariable ("name") String name, @PathVariable("email")String email, @PathVariable("tribe") String tribe){
+        panteraDao.updatePantera(id, name, email, tribe);
     }
 }

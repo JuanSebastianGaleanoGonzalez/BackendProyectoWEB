@@ -4,20 +4,38 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import com.proyecto.dWeb.model.Armas;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
-@Table(name = "panteras")
+@Table(name = "panters")
 @ToString
 @EqualsAndHashCode
+@Getter @Setter
 public class Pantera {
-    @Getter @Setter @Id @Column(name = "id_pantera")
+
+
+    @Id @Column(name = "id_pantera")
     private long id;
 
-    @Getter @Setter @Column(name = "nombre")
-    private String nombre;
+     @Column(name = "name")
+    private String name;
+
+     @Column(name = "email")
+    private String email;
+
+    @Column(name = "tribe")
+    private String tribe;
+
+    /*@OneToMany
+    private List<Armas> armas =new ArrayList<>();*/
+
+    public Pantera() {
+    }
+
+
 }

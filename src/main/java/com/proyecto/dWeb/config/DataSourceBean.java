@@ -21,7 +21,7 @@ public class DataSourceBean {
                 .create()
                 .url("jdbc:mysql://localhost:3306/proyecto")
                 .username("root")
-                .password("")
+                .password("Camilo-2170")
                 .driverClassName("com.mysql.cj.jdbc.Driver")
                 .build();
     }
