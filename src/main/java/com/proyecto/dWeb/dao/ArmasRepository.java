@@ -7,10 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 @Repository
-public interface ArmasRepository  {
+public interface ArmasRepository {
     //void deleteArmas(Long id);
 
     List<Armas> consulta(Long id);
 
-
+    List<Armas> getArmas();
 }

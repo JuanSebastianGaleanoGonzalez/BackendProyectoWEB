@@ -30,5 +30,11 @@ public class ArmasDaoImplementation implements ArmasRepository {
         return armas2;
     }
 
+    @Override
+    public List<Armas> getArmas() {
+        String query = "FROM Armas";
+        return entityManager.createQuery(query).getResultList();
+    }
+
 
 }

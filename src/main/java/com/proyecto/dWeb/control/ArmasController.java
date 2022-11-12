@@ -17,8 +17,8 @@ public class ArmasController {
     @Autowired
     public ArmasRepository armasRepository;
 
-
-
+    @GetMapping
+    public List<Armas> getArmas(){return  armasRepository.getArmas();}
 
     @GetMapping(value = "consulta/{id_pantera}")
     public List<Armas> consultar(@PathVariable("id_pantera")Long id_pantera){
