@@ -13,4 +13,6 @@ public interface PanteraDao {
     void addPantera(Long id, String name, String email, String tribe);
 
     void updatePantera(Long id, String name, String email, String tribe);
+
+    Pantera traerPantera(String usuario, String clave);
 }

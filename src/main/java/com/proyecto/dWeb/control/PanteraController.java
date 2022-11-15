@@ -32,4 +32,9 @@ public class PanteraController {
     public void updatePantera(@PathVariable("id") Long id, @PathVariable ("name") String name, @PathVariable("email")String email, @PathVariable("tribe") String tribe){
         panteraDao.updatePantera(id, name, email, tribe);
     }
+
+    @GetMapping(value = "consulta/{usuario}/{clave}")
+    public Pantera traerPantera(@PathVariable("usuario") String usuario, @PathVariable("calve") String clave){
+        return panteraDao.traerPantera(usuario, clave);
+    }
 }

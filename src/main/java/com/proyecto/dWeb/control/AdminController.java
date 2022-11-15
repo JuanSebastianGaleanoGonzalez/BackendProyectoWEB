@@ -6,6 +6,7 @@ import com.proyecto.dWeb.model.Administrador;
 import net.bytebuddy.asm.Advice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
@@ -16,6 +17,7 @@ public class AdminController {
     public AdminRepository adminRepository;
 
     @GetMapping
-    public List<Administrador> getAdmins(){return  adminRepository.getAdmins();
+    public List<Administrador> getAdmins() {
+        return adminRepository.getAdmins();
     }
 }

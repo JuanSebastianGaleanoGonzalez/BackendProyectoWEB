@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Repository
 @Transactional
@@ -46,5 +46,22 @@ public class PanteraDaoImplementation implements PanteraDao {
         pantera.setEmail(email);
         pantera.setTribe(tribe);
         entityManager.persist(pantera);
+    }
+
+
+    @Override
+    public Pantera traerPantera(String usuario, String clave){
+        String query = "FROM Pantera";
+        List<Pantera> panter = entityManager.createQuery(query).getResultList();
+        Pantera pantera = new Pantera();
+        for (Pantera a:panter){
+            if(a.getName().equals(usuario)){
+
+                return a;
+            }
+        }
+                //entityManager.find(Pantera.class,usuario);
+
+        return null;
     }
 }
