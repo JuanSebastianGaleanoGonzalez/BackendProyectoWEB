@@ -20,7 +20,7 @@ public class ArmasController {
     @GetMapping
     public List<Armas> getArmas(){return  armasRepository.getArmas();}
 
-    @GetMapping(value = "consulta/{id_pantera}")
+    @GetMapping(value = "{id_pantera}")
     public List<Armas> consultar(@PathVariable("id_pantera")Long id_pantera){
         List<Armas> nLista =armasRepository.consulta(id_pantera);
         return nLista;

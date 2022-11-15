@@ -1,18 +1,17 @@
 package com.proyecto.dWeb.service;
 
-import com.proyecto.dWeb.dao.PanteraDao;
+import com.proyecto.dWeb.dao.PanteraRepository;
 import com.proyecto.dWeb.model.Pantera;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 @Transactional
-public class PanteraDaoImplementation implements PanteraDao {
+public class PanteraRepositoryImplementation implements PanteraRepository {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -50,18 +49,15 @@ public class PanteraDaoImplementation implements PanteraDao {
 
 
     @Override
-    public Pantera traerPantera(String usuario, String clave){
+    public Pantera traerPantera(long id){
         String query = "FROM Pantera";
         List<Pantera> panter = entityManager.createQuery(query).getResultList();
         Pantera pantera = new Pantera();
         for (Pantera a:panter){
-            if(a.getName().equals(usuario)){
-
-                return a;
+            if(a.getId() == id){
+                pantera = a;
             }
         }
-                //entityManager.find(Pantera.class,usuario);
-
-        return null;
+        return pantera;
     }
 }

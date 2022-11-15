@@ -9,10 +9,10 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 @Repository
 @Transactional
-public class ArmasDaoImplementation implements ArmasRepository {
+public class ArmasRepositoryImplementation implements ArmasRepository {
 
     @PersistenceContext
     EntityManager entityManager;

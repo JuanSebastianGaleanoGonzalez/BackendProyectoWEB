@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 @Repository
-public interface PanteraDao {
+public interface PanteraRepository {
     List<Pantera> getPanteras();
 
     void deletePantera(Long id);
@@ -14,5 +14,5 @@ public interface PanteraDao {
 
     void updatePantera(Long id, String name, String email, String tribe);
 
-    Pantera traerPantera(String usuario, String clave);
+    Pantera traerPantera(long id);
 }
